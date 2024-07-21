@@ -1,7 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { database } from "../model";
+import { useEffect } from "react";
 
 export default function HomePage({ navigation }: { navigation: any }) {
+  const fetchTasks = async () => {
+    const res = await database.get("tasks").query().fetch();
+    console.log(res);
+  };
+  useEffect(() => {
+    fetchTasks();
+  }, []);
   return (
     <View style={styles.container}>
       <Text>Hello World 👋</Text>
