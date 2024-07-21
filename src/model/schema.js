@@ -5,8 +5,8 @@ export default appSchema({
     tableSchema({
       name: "tasks",
       columns: [
-        { name: "title", type: "string" },
-        { name: "is_finished", type: "boolean" },
+        { name: "description", type: "string" },
+        { name: "completed", type: "boolean" },
       ],
     }),
   ],
